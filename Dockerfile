@@ -41,7 +41,7 @@ ENV GRADLE_HOME /usr/local/gradle-2.2.1
 
 # Download and untar SDK
 ENV ANDROID_SDK_URL http://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
-RUN curl -L ${ANDROID_SDK_URL} | tar xz -C /usr/local
+RUN curl -L ${ANDROID_SDK_URL} | tar xz -C /usr/local && rm android-sdk_r24.4.1-linux.tgz 
 ENV ANDROID_HOME /usr/local/android-sdk-linux
 
 # Install Android SDK components
