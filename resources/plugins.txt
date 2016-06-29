@@ -100,3 +100,5 @@ jquery-detached:1.2
 repository-connector:1.1.1
 mapdb-api:1.0.6.0
 credentials:1.24
+android-lint:2.3
+android-emulator:2.15 
