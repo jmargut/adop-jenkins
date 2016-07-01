@@ -6,7 +6,7 @@ ENV GERRIT_HOST_NAME gerrit
 ENV GERRIT_PORT 8080
 ENV GERRIT_JENKINS_USERNAME="" GERRIT_JENKINS_PASSWORD=""
 
-# Copy in configuration files push test trigger build
+# Copy in configuration files push test trigger build 1
 COPY resources/plugins.txt /usr/share/jenkins/ref/
 COPY resources/init.groovy.d/ /usr/share/jenkins/ref/init.groovy.d/
 COPY resources/scripts/ /usr/share/jenkins/ref/adop_scripts/
