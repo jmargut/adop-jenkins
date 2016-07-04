@@ -43,11 +43,12 @@ ENV GRADLE_HOME /usr/local/gradle-2.2.1
 ENV ANDROID_SDK android-sdk_r24.4.1-linux.tgz
 RUN wget https://dl.google.com/android/${ANDROID_SDK} && tar -xvzf ${ANDROID_SDK} \
 && mv android-sdk-linux /usr/local/android-sdk-linux \
-&& rm ${ANDROID_SDK}
+&& rm ${ANDROID_SDK} 
 ENV ANDROID_HOME /usr/local/android-sdk-linux
 
 # Install Android SDK components
 ENV ANDROID_SDK_COMPONENTS platform-tools,build-tools-24.0.0,android-23,android-24,build-tools-23.0.2,extra-android-support
-RUN echo y | ${ANDROID_HOME}/tools/android update sdk --no-ui --all --filter "${ANDROID_SDK_COMPONENTS}"
+RUN echo y | ${ANDROID_HOME}/tools/android update sdk --no-ui --all --filter "${ANDROID_SDK_COMPONENTS}" \
+&& ./android update sdk --filter 21 --no-ui
 
 ENTRYPOINT ["/entrypoint.sh"]
