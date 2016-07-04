@@ -49,6 +49,6 @@ ENV ANDROID_HOME /usr/local/android-sdk-linux
 # Install Android SDK components
 ENV ANDROID_SDK_COMPONENTS platform-tools,build-tools-24.0.0,android-23,android-24,build-tools-23.0.2,extra-android-support
 RUN echo y | ${ANDROID_HOME}/tools/android update sdk --no-ui --all --filter "${ANDROID_SDK_COMPONENTS}" \
-&& ./android update sdk --filter 21 --no-ui
+&& ${ANDROID_HOME}/tools/android update sdk --filter 21 --no-ui
 
 ENTRYPOINT ["/entrypoint.sh"]
